@@ -1,0 +1,24 @@
+
+<div class="row">
+<table class="table table-bordered bg-light">
+    <thead>
+      <tr>
+        <th scope="col">ISBN number</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Author</th>
+        <th scope="col">price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of bookList; let id = index" >
+        <td><a type="button" data-bs-toggle="modal" data-bs-target="#updateModal">{{book.isbn}}</a></td>
+        <td>{{book.title}}</td>
+        <td>{{book.description}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.price}}</td>
+        <button class="btn btn-primary" style="background-color: blue;" mat-button (click)="openDialog()">More Info</button>
+      </tr>
+    </tbody>
+  </table>
+</div>

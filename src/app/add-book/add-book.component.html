@@ -1,0 +1,59 @@
+
+<div class="jumbotron text-center  d-grid col-4 mx-auto">
+    <h1>
+        Welcome to Book Details
+      </h1>
+    <div [class.active]="viewMode=='fillform'">
+            <a (click)="viewMode='fillform'" >
+                <button class="btn btn-secondary mt-1" type="button" data-bs-toggle="modal" data-bs-target="#addBookModal">Add Book</button>
+            </a>
+    </div>
+</div>
+<br>
+<br>
+
+
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'fillform'">
+        
+
+        <form>
+            <div class="d-grid col-8 mx-auto">
+                <div class="form-group col-sm-12">
+                    <input type="text" class="form-control" name="isbn" [(ngModel)]="Isbn" placeholder="ISBN number" #isbn>
+                </div>
+            </div>
+            <br>
+            <div class="d-grid col-8 mx-auto ">
+                <div class="form-group col-sm-12">
+                    <input type="text" class="form-control" name="title" [(ngModel)]="Title" placeholder="Book Title" #title>
+                </div>
+            </div>
+            <br>
+            <div class="d-grid col-8 mx-auto">
+                <div class="form-group col-sm-12">
+                    <textarea type="text" rows="6" class="form-control" name="description" [(ngModel)]="Description" placeholder="Description" #description></textarea>
+                </div>
+            </div>
+            <br>
+            <div class="d-grid col-8 mx-auto">
+                <div class="form-group col-sm-12">
+                    <input type="text" class="form-control" placeholder="Author Name" name="author" [(ngModel)]="Author" #author>
+                </div>
+            </div>
+            <br>
+            <div class="d-grid col-8 mx-auto">
+                <div class="form-group col-sm-6 ">
+                    <input type="number" class="form-control" name="price" [(ngModel)]="Price" placeholder="Price $" #price>
+                </div>
+            </div>
+        </form>
+  <br>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary" (click)="onAddBook(isbn.value, title.value, description.value, author.value, price.value)"> Add</button>
+    </div>
+    </div>
+
+    <div *ngSwitchDefault   style="margin-left: 520px;">Added book details filling form appear here.</div>
+</div>
