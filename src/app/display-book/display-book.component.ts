@@ -10,17 +10,8 @@ import { AboutComponent } from '../about/about.component';
 })
 export class BookDisplayComponent implements OnInit {
 
-  desc:any;
-  img:any;
-
-  url:any;
-  msg='';
-
-  id: number = 0;
-
   @Input() bookList: any;
 
-  @Output() book: any = new EventEmitter<{id:number, url: any,describtion: string, price: number}>();
 
   constructor(public dialog: MatDialog) {}
 
