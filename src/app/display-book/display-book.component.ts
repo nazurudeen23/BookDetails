@@ -1,5 +1,5 @@
 
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input,} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { AboutComponent } from '../about/about.component';
 
