@@ -35,11 +35,4 @@ export class AppComponent {
     localStorage.setItem('books',JSON.stringify(this.bookList));
   }
 
-  onBookUpdate(book: {id: number,url: any, description: string, price: number})
-  {
-    this.bookList[book.id].description = book.description;
-    this.bookList[book.id].price = book.price;
-    this.bookList[book.id].url = book.url;
-    localStorage.setItem('books',JSON.stringify(this.bookList));
-  }
 }
